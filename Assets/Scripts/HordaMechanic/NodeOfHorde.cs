@@ -8,5 +8,5 @@ public class NodeOfHorde
     public int Str;
     public List<Color> Colors = new List<Color>() { Color.black,Color.white ,Color.red};
     public List<string> EnemyNames = new List<string>() { "Bica", "Trica ", "Func", "Vectores", "Lambda" };
-    public int Quantity;
+    public int Quantity = 5;
 }

@@ -25,7 +25,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
-    }   
+    } 
+    /*
     public void TestMethod()
     {
         Debug.Log("j3zzz");
@@ -57,7 +58,7 @@ public class GameManager : MonoBehaviour
         ListaDeNombres.Add("Juan2");
         ListaDeNombres.Add("Juan3");
         ListaDeNombres.Add("Juan4");
-        ListaDeNombres.Add("Juan5");*/
+        ListaDeNombres.Add("Juan5");
         LinkedList<string> ListaDeNombres = new();
         foreach (string n in ListaNombres) 
         { 
@@ -69,7 +70,7 @@ public class GameManager : MonoBehaviour
 
         ListaDeNombres.Traverse(value => Debug.Log(value.Value));      
     }
-
+    */
     [Button]
     public void HordeSpawnTest()
     {
