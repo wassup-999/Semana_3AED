@@ -1,5 +1,3 @@
-
-
 //Un Node no necesita derivar de monobehaviour
 public class Node<T> 
 {

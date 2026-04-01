@@ -2,15 +2,29 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public int attackPower;
+    public int defendPower;
+    public int Speed;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         
+    }
+    public void Move(Vector3 dir)
+    {
+        Vector3 Dir = transform.forward * Speed*Time.deltaTime;
+    }
+    public void Attack()
+    {
+        Debug.Log("Attack" + attackPower);
+    }
+    public void Defend()
+    {
+        Debug.Log("Defence" + defendPower);
     }
 }
