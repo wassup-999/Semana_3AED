@@ -15,37 +15,32 @@ public class ActionLinkedList : LinkedList<NodeOfAction>
         base.Add(value);
     }
 
-    
-    public void ExecuteActions()
+
+    public void ExecuteAction(NodeOfAction actionNode)
     {
-        if (head == null)
+        switch (actionNode.actionsType)
         {
-            Debug.Log("No hay más nodos");
-            return;
+            case ActionType.none:
+                Debug.Log("Nada");
+                break;
+
+            case ActionType.attack:
+                Debug.Log("Atacar" );
+                break;
+
+            case ActionType.defense:
+                Debug.Log("Defender");
+                break;
+
+            case ActionType.move:
+                Vector3 dir = actionNode.moveDir.normalized;
+
+                Player.transform.position += dir * Player.Speed;
+
+                Debug.Log("Moverse");
+                break;
         }
-        
-        while (head != null)
-        {
-            switch (head.Value.actionType)
-            {
-                case ActionType.none:
-                    Debug.Log("No hay acción");
-                    break;
-
-                case ActionType.move:
-                    Player.Move(head.Value.moveDir);
-                    break;
-
-                case ActionType.attack:
-                    Player.Attack();
-                    break;
-
-
-                case ActionType.defend:
-                    Player.Defend();
-                    break;
-            }
-            head = head.Next;
-        }       
     }
+   
 }
+

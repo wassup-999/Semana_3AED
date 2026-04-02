@@ -1,6 +1,7 @@
-using UnityEngine;
 using Sirenix.OdinInspector;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     //public LinkedList<string> ListaDeNombres = new();
@@ -86,9 +87,45 @@ public class GameManager : MonoBehaviour
     {
         HordaManagment.SpawnHorde();
     }*/
-    [Button]
-    public void ActionTest()
+    
+    public void CreateActions()
     {
-        ActionManagment.ExecuteActions();
+
+        NodeOfAction attack = new NodeOfAction
+        {
+            actionsType = ActionType.attack,
+            attackValue = 10
+        };
+
+        NodeOfAction defense = new NodeOfAction
+        {
+            actionsType = ActionType.defense,
+            defendValue = 5
+        };
+
+        NodeOfAction move = new NodeOfAction
+        {
+            actionsType = ActionType.move,
+            moveDir = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1)),
+        };
+
+        ActionManagment.Add(attack);
+        ActionManagment.Add(defense);
+        ActionManagment.Add(move);
+
+
+    }
+    public IEnumerator ExecuteTurn()
+    {
+        Node<NodeOfAction> current = ActionManagment.head;
+
+        while (current != null)
+        {
+            ActionManagment.ExecuteAction(current.Value);
+
+            yield return new WaitForSeconds(1f);
+
+            current = current.Next;
+        }
     }
 }

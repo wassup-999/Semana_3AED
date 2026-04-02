@@ -5,12 +5,12 @@ public enum ActionType
     none,
     move,
     attack,
-    defend,
+    defense,
 }
 public class NodeOfAction 
 {
     public Vector3 moveDir;
-    public ActionType actionType;
+    public ActionType actionsType;
     public int attackValue;
     public int defendValue;
 }
