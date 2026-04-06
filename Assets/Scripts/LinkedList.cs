@@ -4,6 +4,7 @@ public class LinkedList<T> : MonoBehaviour
 {
     public Node<T> head = null;
     public int Count;
+    
     public virtual void Add(T value)
     {
         Node<T> tempNode = new(value);
@@ -72,7 +73,7 @@ public class LinkedList<T> : MonoBehaviour
         head = Evaluator;
         Count--;
     }
-    public void Traverse(Action<Node<T>> action )
+    public virtual void Traverse(Action<Node<T>> action )
     {
         Node<T> Evaluator = head;
         while (Evaluator != null)

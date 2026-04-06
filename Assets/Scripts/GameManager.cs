@@ -1,43 +1,40 @@
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class GameManager : MonoBehaviour
 {
-    //public LinkedList<string> ListaDeNombres = new();
-    public CustomLinkedList HordaManagment ;
-    public ActionLinkedList ActionManagment;
+    public LinkedList<string> ListaDeNombres = new();
+    public CustomLinkedList HordaManagment;
+    //public ActionLinkedList ActionManagment;
+    public ActionLinkedList<ActionType> TypesOfActions = new();
 
-    public Player player;
+    public ActionType actionType;
     public Enemy enemyPref;
     void Start()
     {
-        ActionManagment.Set(player);
-
-        ActionManagment.Add(new());
-        ActionManagment.Add(new());
-        ActionManagment.Add(new());
-
 
         /*
         HordaManagment.Set(enemyPref);
-
+        
         HordaManagment.Add(new());
         HordaManagment.Add(new());
         HordaManagment.Add(new());
         HordaManagment.Add(new());
         HordaManagment.Add(new());
         HordaManagment.Add(new());
-        Debug.Log(HordaManagment.Count);*/
+        Debug.Log(HordaManagment.Count);
+        */
     }
 
-    
+
     void Update()
     {
-        
+
     }
+
     
-    /*
     public void TestMethod()
     {
         Debug.Log("j3zzz");
@@ -62,70 +59,60 @@ public class GameManager : MonoBehaviour
             Evaluator = Evaluator.Next;
         }
     }
+
     [Button]
     public void TestLinkedList(List<string> ListaNombres) 
     {
-        /*ListaDeNombres.Add("Juan");
-        ListaDeNombres.Add("Juan2");
-        ListaDeNombres.Add("Juan3");
-        ListaDeNombres.Add("Juan4");
-        ListaDeNombres.Add("Juan5");
         LinkedList<string> ListaDeNombres = new();
         foreach (string n in ListaNombres) 
         { 
             ListaDeNombres.Add(n);
         }
+             
             //ListaDeNombres.RemoveFirst();
             ListaDeNombres.RemoveLast();
 
 
         ListaDeNombres.Traverse(value => Debug.Log(value.Value));      
     }
-    */
-    /*[Button]
+    
+    [Button]
     public void HordeSpawnTest()
     {
         HordaManagment.SpawnHorde();
-    }*/
-    
-    public void CreateActions()
-    {
-
-        NodeOfAction attack = new NodeOfAction
-        {
-            actionsType = ActionType.attack,
-            attackValue = 10
-        };
-
-        NodeOfAction defense = new NodeOfAction
-        {
-            actionsType = ActionType.defense,
-            defendValue = 5
-        };
-
-        NodeOfAction move = new NodeOfAction
-        {
-            actionsType = ActionType.move,
-            moveDir = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1)),
-        };
-
-        ActionManagment.Add(attack);
-        ActionManagment.Add(defense);
-        ActionManagment.Add(move);
-
-
     }
-    public IEnumerator ExecuteTurn()
+
+    [Button]
+    public void TestActionList(List<ActionType> ActionManagment)
     {
-        Node<NodeOfAction> current = ActionManagment.head;
-
-        while (current != null)
+        ActionLinkedList<ActionType> TypesOfActions = new();
+        foreach (ActionType n in ActionManagment)
         {
-            ActionManagment.ExecuteAction(current.Value);
-
-            yield return new WaitForSeconds(1f);
-
-            current = current.Next;
+            ActionManagment.Add((ActionType.none));
+            ActionManagment.Add((ActionType.attack));
+            ActionManagment.Add(ActionType.defense);
+            ActionManagment.Add(ActionType.move);
         }
+      
+        //ActionManagment.Traverse(value => Debug.Log(value.Value));
     }
+    
+
+    
+    /*
+    [Button]
+    
+    public void ActionsTest(NodeOfAction actionNode)
+    {
+        
+        ActionManagment.ExecuteAction(actionNode);
+        ActionManagment.Set(actionType);
+        ActionManagment.Add(new());
+        ActionManagment.Add(new ());
+        ActionManagment.Add(new());
+        ActionManagment.Add(new());      
+        
+    }
+    */
 }
+

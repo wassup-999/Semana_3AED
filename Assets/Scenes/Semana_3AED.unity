@@ -205,12 +205,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: -0.15066789, y: 0.69558245, z: -0.1528526, w: -0.68563867}
+  m_LocalPosition: {x: 3.858302, y: 3.9952617, z: 0.004594803}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1476171312}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
@@ -462,8 +462,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   HordaManagment: {fileID: 1726554179}
-  ActionManagment: {fileID: 0}
-  player: {fileID: 1476171308}
+  ActionManagment: {fileID: 1820851230}
+  actionType: 0
   enemyPref: {fileID: 2960505668293926338, guid: 13f981947e36e76438c4ac26571c8ae7, type: 3}
 --- !u!4 &1262985510
 Transform:
@@ -478,8 +478,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1726554178}
   - {fileID: 1820851229}
+  - {fileID: 1726554178}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1476171307
@@ -514,9 +514,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a7ae519c2e5a248b68f9fee1014f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  attackPower: 1
-  defendPower: 1
-  Speed: 3
+  attackPower: 59
+  defendQuantity: 2
+  Speed: 8
 --- !u!136 &1476171309
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -606,10 +606,11 @@ Transform:
   m_GameObject: {fileID: 1476171307}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.43725, y: 1.157, z: -3.05002}
+  m_LocalPosition: {x: -0.3, y: 0.6, z: 11.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 330585546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1726554177
@@ -702,13 +703,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8d089bd0fd6ecb44a046afa9ea04912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ActionLinkedList
-  Count: 0
+  Count: 639
   Player: {fileID: 1476171308}
+  actionType: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 330585546}
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 1262985510}

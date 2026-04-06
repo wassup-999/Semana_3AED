@@ -3,7 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int attackPower;
-    public int defendPower;
+    public int defendQuantity;
     public int Speed;
     void Start()
     {
@@ -15,16 +15,19 @@ public class Player : MonoBehaviour
     {
         
     }
-    public void Move(Vector3 dir)
-    {
-        Vector3 Dir = transform.forward * Speed*Time.deltaTime;
+   
+    public void Move()
+    {     
+        Vector3 dir = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1));
+        transform.position += dir * Speed;
     }
     public void Attack()
     {
-        Debug.Log("Attack" + attackPower);
+        attackPower = Random.Range(0, 100);             
     }
     public void Defend()
     {
-        Debug.Log("Defence" + defendPower);
+        
+        defendQuantity = Random.Range(0, 10);
     }
 }
