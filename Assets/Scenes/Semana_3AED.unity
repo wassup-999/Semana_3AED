@@ -463,7 +463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   ListaDeNombres: {fileID: 0}
   HordaManagment: {fileID: 1726554179}
-  TypesOfActions: {fileID: 0}
+  ActionManagment: {fileID: 1820851230}
   actionType: 0
   enemyPref: {fileID: 2960505668293926338, guid: 13f981947e36e76438c4ac26571c8ae7, type: 3}
 --- !u!4 &1262985510
@@ -515,7 +515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a7ae519c2e5a248b68f9fee1014f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  attackPower: 1
+  attackPower: 25
   defendQuantity: 0
   Speed: 8
 --- !u!136 &1476171309
@@ -607,7 +607,7 @@ Transform:
   m_GameObject: {fileID: 1476171307}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.3, y: 0.6, z: -4.75}
+  m_LocalPosition: {x: 33.8, y: 0.6, z: -10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -704,7 +704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8d089bd0fd6ecb44a046afa9ea04912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ActionLinkedList
-  Count: 772
+  Count: 942
   Player: {fileID: 1476171308}
   actionType: 0
 --- !u!1660057539 &9223372036854775807

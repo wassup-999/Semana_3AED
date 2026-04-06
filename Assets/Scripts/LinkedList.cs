@@ -73,7 +73,7 @@ public class LinkedList<T> : MonoBehaviour
         head = Evaluator;
         Count--;
     }
-    public virtual void Traverse(Action<Node<T>> action )
+    public  void Traverse(Action<Node<T>> action )
     {
         Node<T> Evaluator = head;
         while (Evaluator != null)

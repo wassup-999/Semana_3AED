@@ -7,15 +7,14 @@ public class GameManager : MonoBehaviour
 {
     public LinkedList<string> ListaDeNombres = new();
     public CustomLinkedList HordaManagment;
-    //public ActionLinkedList ActionManagment;
-    public ActionLinkedList<ActionType> TypesOfActions = new();
-
+    public ActionLinkedList ActionManagment;
+    
     public ActionType actionType;
     public Enemy enemyPref;
     void Start()
     {
 
-        /*
+        
         HordaManagment.Set(enemyPref);
         
         HordaManagment.Add(new());
@@ -25,9 +24,8 @@ public class GameManager : MonoBehaviour
         HordaManagment.Add(new());
         HordaManagment.Add(new());
         Debug.Log(HordaManagment.Count);
-        */
+        
     }
-
 
     void Update()
     {
@@ -83,36 +81,39 @@ public class GameManager : MonoBehaviour
     }
 
     [Button]
-    public void TestActionList(List<ActionType> ActionManagment)
+    public void TestAction()
     {
-        ActionLinkedList<ActionType> TypesOfActions = new();
-        foreach (ActionType n in ActionManagment)
-        {
-            ActionManagment.Add((ActionType.none));
-            ActionManagment.Add((ActionType.attack));
-            ActionManagment.Add(ActionType.defense);
-            ActionManagment.Add(ActionType.move);
-        }
-      
-        //ActionManagment.Traverse(value => Debug.Log(value.Value));
-    }
-    
+               
+        Node<ActionType> none = new(ActionType.none);
+        Node<ActionType> attack = new(ActionType.attack);
+        Node<ActionType> defense = new(ActionType.defense);
+        Node<ActionType> move = new(ActionType.move); 
+        
+        attack.SetNext(defense);
+        defense.SetNext(move);
+        move.SetNext(none);
+        Node<ActionType> Evaluator = attack;
 
-    
-    /*
-    [Button]
-    
-    public void ActionsTest(NodeOfAction actionNode)
-    {
-        
-        ActionManagment.ExecuteAction(actionNode);
-        ActionManagment.Set(actionType);
-        ActionManagment.Add(new());
-        ActionManagment.Add(new ());
-        ActionManagment.Add(new());
-        ActionManagment.Add(new());      
-        
+        while (Evaluator.Next != null)
+        {
+            Debug.Log(Evaluator.Value);
+            Evaluator = Evaluator.Next;
+        }      
     }
-    */
+    
+    [Button]
+    public void ActionsTest(NodeOfAction actionNode)
+    {       
+        ActionManagment.ExecuteAction(actionNode);
+
+        ActionManagment.Set(actionType);
+              
+        ActionManagment.Add(new());
+        ActionManagment.Add(new());
+        ActionManagment.Add(new());
+        ActionManagment.Add(new());            
+    }
+    
+   
 }
 

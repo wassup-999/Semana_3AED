@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine;
 
 //Aqui se hace casi toda la implementacion del recorrido de las acciones, se hace la implementacion de la lista enlazada y se hace el recorrido de esta para ejecutar las acciones, se hace uso de los nodos de accion para almacenar las acciones a ejecutar
-public class ActionLinkedList<T>: LinkedList<NodeOfAction>
+public class ActionLinkedList: LinkedList<NodeOfAction>
 {
     public Player Player;   
     public ActionType actionType;
@@ -17,11 +17,6 @@ public class ActionLinkedList<T>: LinkedList<NodeOfAction>
     {
         base.Add(value);
     }
-    public override void Traverse(Action<Node<NodeOfAction>> action)
-    {
-        base.Traverse(action);
-    }
-
     public void ExecuteAction(NodeOfAction actionNode)
     {
         if(head == null)
@@ -55,12 +50,13 @@ public class ActionLinkedList<T>: LinkedList<NodeOfAction>
         }
         RemoveFirst();
     }
+    
     /*
     public IEnumerator ExecuteTurn()
     {
         Node<NodeOfAction> current = head;
 
-        while (current == null)
+        while (current != null)
         {
             ExecuteAction(current.Value);
 
@@ -68,7 +64,8 @@ public class ActionLinkedList<T>: LinkedList<NodeOfAction>
 
             current = current.Next;
         }
-    }*/
+    }
+    */
 
 }
 
