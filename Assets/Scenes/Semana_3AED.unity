@@ -515,7 +515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a7ae519c2e5a248b68f9fee1014f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  attackPower: 25
+  attackPower: 66
   defendQuantity: 0
   Speed: 8
 --- !u!136 &1476171309
@@ -704,7 +704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8d089bd0fd6ecb44a046afa9ea04912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ActionLinkedList
-  Count: 942
+  Count: 986
   Player: {fileID: 1476171308}
   actionType: 0
 --- !u!1660057539 &9223372036854775807
